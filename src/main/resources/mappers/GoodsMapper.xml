@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.mapper.GoodsMapper">
+    <select id="getGoods" resultType="com.lzl.model.Goods">
+        select id,good_id,`name`,price,`type`,img_path,stock_cnt from goods ;
+    </select>
+    <select id="getGoodsById" resultType="com.lzl.model.Goods">
+        select id,good_id,`name`,price,`type`,img_path,stock_cnt from goods where good_id=#{goodsId};
+    </select>
+</mapper>

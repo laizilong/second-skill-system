@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+mybatis:
+# config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath*:/mappers/*.xml
+  type-aliases-package: com.lzl.model
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot?useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password : 123456
+  redis:
+    host: xiaolong.websit
+    password:
+    port: 6379
+    database: 0
+
+
+

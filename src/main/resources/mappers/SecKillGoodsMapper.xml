@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzl.mapper.SecKillGoodsMapper">
+    <select id="getSecGoodsById" resultType="com.lzl.model.SecKillGoods">
+        select id,goods_id,seckills_price,stock_cnt,start_time,end_time
+        from seckills_goods
+        where goods_id = #{goods_id};
+    </select>
+    <update id="reduceStockCnt">
+        update seckills_goods set  stock_cnt=#{stock_cnt} where goods_id=#{goods_id}
+    </update>
+</mapper>

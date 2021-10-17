@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+<br/>
+<h1>订单详情</h1>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <tr>
+            <td>商品名称</td>
+            <td colspan="3" th:text="${orderDetailVo.name}"></td>
+        </tr>
+
+        <tr>
+            <td>商品图片</td>
+            <td colspan="3">
+                <img th:src="@{${orderDetailVo.imgPath}}" width="200" height="200"/></td>
+        </tr>
+
+        <tr>
+            <td>订单开始时间</td>
+            <td colspan="3" th:text="${#dates.format(orderDetailVo.startTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+
+        <tr>
+            <td>订单成交价</td>
+            <td colspan="3" th:text="${orderDetailVo.price}"></td>
+        </tr>
+
+        <tr>
+            <td>联系方式</td>
+            <td colspan="3" th:text="${orderDetailVo.telephone}"></td>
+        </tr>
+
+        <tr>
+            <td>收货地址</td>
+            <td colspan="3" th:text="${orderDetailVo.address}"></td>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

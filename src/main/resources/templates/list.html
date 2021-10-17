@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表页</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<h1>商品列表页</h1>
+<br><br>
+<div class="with:80%">
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>商品名称</th>
+        <th>商品图片</th>
+        <th>商品原价</th>
+        <th>秒杀价</th>
+        <th>库存数量</th>
+        <th>开始时间</th>
+        <th>详情</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="goodsVo:${goodsList}">
+        <td th:text="${goodsVo.name}">name</td>
+        <td><img th:src="@{${goodsVo.imgPath}}" width="100" height="100"></td>
+        <td th:text="${goodsVo.price}">price</td>
+        <td th:text="${goodsVo.secKillPrice}">secKillPrice</td>
+        <td th:text="${goodsVo.stockNum}">stockNum</td>
+        <td th:text="${goodsVo.startTime}">startTime</td>
+        <td><a th:href="'/goodsDetail/'+${goodsVo.goodsId}">详情</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
