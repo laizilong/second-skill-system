@@ -15,8 +15,3 @@ spring:
   redis:
     host: xiaolong.websit
     password:
-    port: 6379
-    database: 0
-
-
-
